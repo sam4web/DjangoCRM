@@ -7,28 +7,27 @@
     <h3 class="text-3xl font-medium mb-5">Records</h3>
     <table class="w-full shadow-md rounded-md overflow-hidden">
         <thead>
-            <tr class="text-lg font-medium text-white bg-slate-800">
-                <td class="text-center py-4 px-2">Id</td>
-                <td class="text-center py-4 px-2">Name</td>
-                <td class="text-center py-4 px-2">Email</td>
-                <td class="text-center py-4 px-2">City</td>
-                <td class="text-center py-4 px-2">State</td>
-                <td class="text-center py-4 px-2">Zip</td>
-                <td class="text-center py-4 px-2">Action</td>
+            <tr class="text-lg font-medium text-white bg-slate-800 text-center">
+                <td class="p-4">Id</td>
+                <td class="py-4 px-2">Name</td>
+                <td class="py-4 px-2">Email</td>
+                <td class="py-4 px-2">City</td>
+                <td class="py-4 px-2">State</td>
+                <td class="py-4 px-2">Zip</td>
+                <td class="py-4 px-2">Action</td>
             </tr>
         </thead>
 
         <tbody class="px-4">
-
             {% for record in records %}
-            <tr class="border-b">
-                <td class="text-center py-4 px-2"> {{record.id}} </td>
-                <td class="text-center py-4 px-2"> {{record.name}} </td>
-                <td class="text-center py-4 px-2"> {{record.email}} </td>
-                <td class="text-center py-4 px-2"> {{record.city}} </td>
-                <td class="text-center py-4 px-2"> {{record.state}} </td>
-                <td class="text-center py-4 px-2"> {{record.zip_code}} </td>
-                <td class="text-center py-4 px-2">
+            <tr class="border-b text-center">
+                <td class="p-4"> {{record.id}} </td>
+                <td class="py-4 px-2"> {{record.name}} </td>
+                <td class="py-4 px-2"> {{record.email}} </td>
+                <td class="py-4 px-2"> {{record.city}} </td>
+                <td class="py-4 px-2"> {{record.state}} </td>
+                <td class="py-4 px-2"> {{record.zip_code}} </td>
+                <td class="py-4 px-2">
                     <a href="{% url 'core:record-detail' record.id %}" class="text-blue-600 underline">View</a>
                 </td>
             </tr>
