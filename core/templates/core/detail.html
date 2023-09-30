@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+{% block title %} {{ record.name }} {% endblock title %}
+
+{% block content %}
+<h3 class="text-3xl font-medium mb-5">Detail</h3>
+<div class="w-full max-w-xl">
+    <ul class="bg-gray-100 rounded-lg overflow-hidden mb-5">
+        <li class="py-3 border-b border-gray-300 px-7 text-lg">
+            <strong class="mr-1 font-medium"> Id: </strong>
+            {{ record.id }}
+        </li>
+        <li class="py-3 border-b border-gray-300 px-7 text-lg">
+            <strong class="mr-1 font-medium"> Name: </strong>
+            {{ record.name }}
+        </li>
+        <li class="py-3 border-b border-gray-300 px-7 text-lg">
+            <strong class="mr-1 font-medium"> Email: </strong>
+            {{ record.email }}
+        </li>
+        <li class="py-3 border-b border-gray-300 px-7 text-lg">
+            <strong class="mr-1 font-medium"> City: </strong>
+            {{ record.city }}
+        </li>
+        <li class="py-3 border-b border-gray-300 px-7 text-lg">
+            <strong class="mr-1 font-medium"> State: </strong>
+            {{ record.state }}
+        </li>
+        <li class="py-3 border-b border-gray-300 px-7 text-lg">
+            <strong class="mr-1 font-medium"> Zip Code: </strong>
+            {{ record.zip_code }}
+        </li>
+    </ul>
+
+    <div class="flex gap-5">
+        <button
+            class="bg-emerald-500 font-medium text-white border-2 border-emerald-500 text-lg w-full p-2 rounded-md hover:bg-white hover:text-slate-800 transition">
+            Edit
+        </button>
+        <button
+            class="bg-rose-600 font-medium text-white border-2 border-rose-600 text-lg w-full p-2 rounded-md hover:bg-white hover:text-slate-800 transition">
+            Delete
+        </button>
+    </div>
+</div>
+{% endblock content %}

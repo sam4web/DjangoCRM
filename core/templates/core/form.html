@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+<h3 class="text-3xl font-medium mb-5">{{ title }}</h3>
+<form action="." method="POST" class="bg-gray-100 rounded-lg px-6 py-7">
+    {% csrf_token %}
+
+    <div class="max-w-lg mx-auto text-left">
+        {% for field in form %}
+        <div class="mb-4">
+            <label class="text-xl mb-2 block" for="{{ field.auto_id }}">{{ field.label }}</label>
+            {{ field }}
+        </div>
+        {% endfor %}
+
+        <button
+            class="bg-emerald-500 font-medium text-white border-2 border-emerald-500 text-lg p-3 rounded-lg hover:bg-white hover:text-slate-800 transition mt-5 w-full">
+            Submit
+        </button>
+    </div>
+</form>
+{% endblock content %}

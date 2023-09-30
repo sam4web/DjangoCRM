@@ -2,5 +2,47 @@
 {% block title %} Welcome {% endblock title %}
 
 {% block content %}
-<h1>Hello, World!</h1>
+{% if records %}
+<div>
+    <h3 class="text-3xl font-medium mb-5">Records</h3>
+    <table class="w-full shadow-md rounded-lg overflow-hidden">
+        <thead>
+            <tr class="text-lg font-medium text-white bg-slate-800">
+                <td class="text-center py-3">Id</td>
+                <td class="text-center py-3">Name</td>
+                <td class="text-center py-3">Email</td>
+                <td class="text-center py-3">City</td>
+                <td class="text-center py-3">State</td>
+                <td class="text-center py-3">Zip</td>
+                <td class="text-center py-3">Action</td>
+            </tr>
+        </thead>
+
+        <tbody class="px-4">
+
+            {% for record in records %}
+            <tr class="border-b">
+                <td class="text-center py-3"> {{record.id}} </td>
+                <td class="text-center py-3"> {{record.name}} </td>
+                <td class="text-center py-3"> {{record.email}} </td>
+                <td class="text-center py-3"> {{record.city}} </td>
+                <td class="text-center py-3"> {{record.state}} </td>
+                <td class="text-center py-3"> {{record.zip_code}} </td>
+                <td class="text-center py-3">
+                    <a href="{% url 'core:record-detail' record.id %}" class="text-blue-600 underline">View</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div>
+    <h3 class="text-3xl font-medium mb-5">No records to show!</h3>
+    <a href="#" class="text-lg text-blue-500 font-medium underline">
+        Create record
+    </a>
+</div>
+{% endif %}
 {% endblock content %}
