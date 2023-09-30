@@ -1,0 +1,29 @@
+<nav class="shadow-sm">
+    <div class="max-w-5xl w-full mx-auto sm:px-5 p-3 pb-4 flex justify-between items-center">
+        <a href="{% url 'core:index' %}">
+            <h3 class="text-2xl font-semibold text-slate-800">DjangoCRM</h3>
+        </a>
+
+        <ul class="flex items-center gap-6">
+            <li>
+                <a href="{% url 'core:add-record' %}" class="text-lg hover:underline">
+                    Add record
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- 
+                    <button
+                        class="hover:bg-slate-800 font-medium hover:text-white border-2 border-slate-800 text-lg px-5 py-2 rounded-lg bg-white text-slate-800 transition">
+                        Logout
+                    </button>
+                     -->
+                    <button
+                        class="bg-slate-800 font-medium text-white border-2 border-slate-800 text-lg px-5 py-2 rounded-lg hover:bg-white hover:text-slate-800 transition">
+                        Login
+                    </button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %} {% endblock title %} | DjangoCRM</title>
+    <title>{% block title %}{% endblock title %} | DjangoCRM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    {% block content %} {% endblock content %}
+<body class="flex flex-col h-screen w-full">
+    {% include 'core/components/navbar.html' %}
+    <main class="max-w-7xl w-full mx-auto sm:px-5 p-3 mt-10 flex-1">
+        {% block content %}
+        {% endblock content %}
+    </main>
+    {% include 'core/components/footer.html' %}
 </body>
 
 </html>
