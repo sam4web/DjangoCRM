@@ -55,6 +55,7 @@ def signup_view(request):
     return render(request, "core/form.html", context)
 
 
+@login_required
 def logout_view(request):
     logout(request)
     return redirect("core:login")
@@ -81,15 +82,29 @@ def add_record(request):
 
 
 @login_required
-def edit_record(request):
-    pass
-
-
-@login_required
 def record_view(request, pk):
     record = Record.objects.get(pk=pk)
     context = {"record": record}
     return render(request, "core/detail.html", context)
+
+
+@login_required
+def edit_record(request, pk):
+    record = Record.objects.get(pk=pk)
+    if request.method == "POST":
+        form = RecordForm(request.POST, instance=record)
+        if form.is_valid():
+            form.save()
+            return redirect("core:record-detail", pk=pk)
+    else:
+        form = RecordForm(instance=record)
+
+    context = {
+        "title": "edit record",
+        "btn_msg": "Edit",
+        "form": form,
+    }
+    return render(request, "core/form.html", context)
 
 
 @login_required

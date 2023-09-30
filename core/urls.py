@@ -12,4 +12,5 @@ urlpatterns = [
     path("add/", add_record, name="add-record"),
     path("detail/<int:pk>/", record_view, name="record-detail"),
     path("delete/<int:pk>/", delete_record, name="delete-record"),
+    path("edit/<int:pk>/", edit_record, name="edit-record"),
 ]
