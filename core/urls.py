@@ -10,5 +10,6 @@ urlpatterns = [
     path("login/", login_view, name="login"),
     path("signup/", signup_view, name="signup"),
     path("add/", add_record, name="add-record"),
-    path("detail/<int:pk>", record_view, name="record-detail"),
+    path("detail/<int:pk>/", record_view, name="record-detail"),
+    path("delete/<int:pk>/", delete_record, name="delete-record"),
 ]

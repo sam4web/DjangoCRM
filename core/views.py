@@ -90,3 +90,13 @@ def record_view(request, pk):
     record = Record.objects.get(pk=pk)
     context = {"record": record}
     return render(request, "core/detail.html", context)
+
+
+@login_required
+def delete_record(request, pk):
+    if request.method == "POST":
+        record = Record.objects.get(pk=pk)
+        record.delete()
+        return redirect("core:index")
+    context = {"id": pk}
+    return render(request, "core/delete.html", context)

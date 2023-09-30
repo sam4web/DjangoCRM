@@ -32,14 +32,18 @@
     </ul>
 
     <div class="flex gap-5">
-        <button
-            class="bg-emerald-500 font-medium text-white border-2 border-emerald-500 text-lg w-full p-2 rounded-md hover:bg-white hover:text-slate-800 transition">
-            Edit
-        </button>
-        <button
-            class="bg-rose-600 font-medium text-white border-2 border-rose-600 text-lg w-full p-2 rounded-md hover:bg-white hover:text-slate-800 transition">
-            Delete
-        </button>
+        <a href="" class="w-full">
+            <button
+                class="bg-emerald-500 font-medium text-white border-2 w-full border-emerald-500 text-lg p-2 rounded-md hover:bg-white hover:text-slate-800 transition">
+                Edit
+            </button>
+        </a>
+        <a href="{% url 'core:delete-record' record.id %}" class="w-full">
+            <button
+                class="bg-rose-600 font-medium text-white border-2 w-full border-rose-600 text-lg p-2 rounded-md hover:bg-white hover:text-slate-800 transition">
+                Delete
+            </button>
+        </a>
     </div>
 </div>
 {% endblock content %}
